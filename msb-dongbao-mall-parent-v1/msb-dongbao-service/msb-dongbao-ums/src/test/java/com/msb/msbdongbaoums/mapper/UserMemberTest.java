@@ -10,22 +10,24 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @date 2020/12/23
  */
 @SpringBootTest
-public class UmsMemberMapperTest {
+public class UserMemberTest {
 
 	@Autowired
 	UmsMemberMapper umsMemberMapper;
 
 	@Test
 	void testInsert(){
-		UmsMember u = new UmsMember();
-		u.setEmail("asdasd@qq.com");
-		u.setIcon("s");
-		u.setNickName("nicknamn");
-		u.setNote("s");
-		u.setPassword("d");
-		u.setStatus(0);
-		u.setUsername("usernam1e");
-		umsMemberMapper.insert(u);
-	}
 
+
+		UmsMember t = new UmsMember();
+		t.setUsername("cpf");
+		t.setStatus(0);
+		t.setPassword("1");
+		t.setNote("note");
+		t.setNickName("nick");
+		t.setEmail("email");
+
+
+		umsMemberMapper.insert(t);
+	}
 }
