@@ -1,3 +1,5 @@
+
+
 spring:
   datasource:
     username: root
@@ -14,4 +16,7 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
   mapper-locations:
-  - classpath*:/com/msb/msbdongbaoums/mapper/xml/*.xml
+  - classpath*:/com/msb/dongbao/ums/mapper/xml/*.xml
+  type-aliases-package: com.msb.dongbao.ums.entity
+server:
+  port: 8081

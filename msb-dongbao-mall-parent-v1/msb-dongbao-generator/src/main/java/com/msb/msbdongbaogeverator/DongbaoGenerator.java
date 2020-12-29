@@ -70,7 +70,7 @@ public class DongbaoGenerator {
 		// 自动填充
 		TableFill gmtCreate = new TableFill("create_time",FieldFill.INSERT);
 		TableFill gmtModify = new TableFill("update_time",FieldFill.INSERT_UPDATE);
-		ArrayList<TableFill> tableFills = new ArrayList<>();
+		ArrayList<TableFill> tableFills = new ArrayList<TableFill>();
 		tableFills.add(gmtCreate);
 		tableFills.add(gmtModify);
 
