@@ -1,12 +1,10 @@
 package com.msb.dongbao.portal.web.controller;
 
-import com.msb.dongbao.ums.entity.dto.UmsMemberREgisterParamDTO;
+import com.msb.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
+import com.msb.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.msb.dongbao.ums.service.UmsMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 马士兵教育:chaopengfei
@@ -26,12 +24,17 @@ public class UserMemberController {
 
 	/**
 	 * 注册
-	 * @param umsMemberREgisterParamDTO
+	 * @param umsMemberRegisterParamDTO
 	 * @return
 	 */
-	@GetMapping("/register")
-	public String register(@RequestBody  UmsMemberREgisterParamDTO umsMemberREgisterParamDTO){
-		umsMemberService.register(umsMemberREgisterParamDTO);
+	@PostMapping("/register")
+	public String register(@RequestBody UmsMemberRegisterParamDTO umsMemberRegisterParamDTO){
+		umsMemberService.register(umsMemberRegisterParamDTO);
 		return "register";
+	}
+
+	@PostMapping("/login")
+	public String login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO){
+		return umsMemberService.login(umsMemberLoginParamDTO);
 	}
 }

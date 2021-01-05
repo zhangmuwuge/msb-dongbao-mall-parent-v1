@@ -9,7 +9,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class UmsMemberREgisterParamDTO {
+public class UmsMemberRegisterParamDTO {
 
 	private String username;
 	private String password;
