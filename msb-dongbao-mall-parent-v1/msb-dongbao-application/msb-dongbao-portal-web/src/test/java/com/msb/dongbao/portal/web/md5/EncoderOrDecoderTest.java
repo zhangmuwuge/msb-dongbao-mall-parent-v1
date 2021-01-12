@@ -35,5 +35,6 @@ public class EncoderOrDecoderTest {
 		System.out.println("第2次加密值："+encode);
 		matches = bCryptPasswordEncoder.matches(sourceString, encode);
 		System.out.println("第2次验证："+matches);
+
 	}
 }

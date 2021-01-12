@@ -17,6 +17,10 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <modules>
+        <module>msb-dongbao-ums</module>
+    </modules>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.alibaba.nacos/nacos-client -->
         <dependency>
