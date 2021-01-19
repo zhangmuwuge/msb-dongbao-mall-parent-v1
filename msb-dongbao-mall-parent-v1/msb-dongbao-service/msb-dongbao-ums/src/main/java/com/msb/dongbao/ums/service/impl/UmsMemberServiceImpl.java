@@ -5,6 +5,7 @@ import com.msb.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.msb.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.msb.dongbao.ums.mapper.UmsMemberMapper;
 import com.msb.dongbao.ums.service.UmsMemberService;
+import com.msb.msbdongbaocommonutil.JwtUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -57,7 +58,9 @@ public class UmsMemberServiceImpl  implements UmsMemberService {
 			return "用户不存在";
 		}
 
+		String token = JwtUtil.createToken(umsMember.getUsername());
+
 		System.out.println("登录成功");
-		return "token";
+		return token;
 	}
 }
