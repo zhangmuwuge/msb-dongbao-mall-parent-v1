@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Email;
 
 /**
  * @author 马士兵教育:chaopengfei
@@ -41,6 +40,8 @@ public class UserMemberController {
 
 	@PostMapping("/login")
 	public String login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO){
+
+
 		return umsMemberService.login(umsMemberLoginParamDTO);
 	}
 
