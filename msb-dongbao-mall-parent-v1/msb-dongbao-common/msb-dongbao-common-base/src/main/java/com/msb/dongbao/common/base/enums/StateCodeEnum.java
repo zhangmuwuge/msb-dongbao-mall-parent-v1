@@ -10,6 +10,15 @@ import lombok.Data;
  * @date 2021/1/12
  */
 public enum StateCodeEnum {
+	/**
+	 * 用户名密码不正确
+	 */
+	PASSWORD_ERROR(1001,"用户名密码不正确"),
+
+	/**
+	 * 用户不存在
+	 */
+	USER_EMPTY(1002,"用户不存在"),
 
 	/**
 	 * 请求失败

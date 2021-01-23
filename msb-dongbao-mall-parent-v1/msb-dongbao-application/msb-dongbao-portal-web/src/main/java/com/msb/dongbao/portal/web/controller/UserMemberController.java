@@ -34,12 +34,11 @@ public class UserMemberController {
 	@PostMapping("/register")
 	public ResultWrapper register(@RequestBody @Valid UmsMemberRegisterParamDTO umsMemberRegisterParamDTO){
 
-		umsMemberService.register(umsMemberRegisterParamDTO);
-		return ResultWrapper.getSuccessBuilder().data(null).build();
+		return umsMemberService.register(umsMemberRegisterParamDTO);
 	}
 
 	@PostMapping("/login")
-	public String login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO){
+	public ResultWrapper login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO){
 
 
 		return umsMemberService.login(umsMemberLoginParamDTO);
