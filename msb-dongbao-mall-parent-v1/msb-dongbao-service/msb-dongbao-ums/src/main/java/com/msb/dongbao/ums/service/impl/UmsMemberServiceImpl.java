@@ -61,12 +61,18 @@ public class UmsMemberServiceImpl  implements UmsMemberService {
 			return ResultWrapper.getFailBuilder().code(StateCodeEnum.USER_EMPTY.getCode()).msg(StateCodeEnum.USER_EMPTY.getMsg()).build();
 		}
 
-		String token = JwtUtil.createToken(umsMember.getUsername());
+		String token = JwtUtil.createToken(umsMember.getId()+"");
 
 		UserMemberLoginResponse userMemberLoginResponse = new UserMemberLoginResponse();
 		userMemberLoginResponse.setToken(token);
 		umsMember.setPassword("");
 		userMemberLoginResponse.setUmsMember(umsMember);
 		return ResultWrapper.getSuccessBuilder().data(userMemberLoginResponse).build();
+	}
+
+	@Override
+	public ResultWrapper edit(UmsMember umsMember) {
+		umsMemberMapper.updateById(umsMember);
+		return ResultWrapper.getSuccessBuilder().data(umsMember).build();
 	}
 }

@@ -1,6 +1,7 @@
 package com.msb.dongbao.portal.web.controller;
 
 import com.msb.dongbao.common.base.result.ResultWrapper;
+import com.msb.dongbao.ums.entity.UmsMember;
 import com.msb.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.msb.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.msb.dongbao.ums.service.UmsMemberService;
@@ -44,6 +45,13 @@ public class UserMemberController {
 		return umsMemberService.login(umsMemberLoginParamDTO);
 	}
 
+	@PostMapping("/edit")
+	public ResultWrapper edit(@RequestBody UmsMember umsMember){
+		return umsMemberService.edit(umsMember);
+	}
+
+
+
 	/**
 	 * 这是测试的 系统中的任意一个接口,
 	 * 修改用户信息。
@@ -51,10 +59,9 @@ public class UserMemberController {
 	 * @return
 	 */
 	@GetMapping("/test-verify")
-	public String verify(String token){
+	public ResultWrapper verify(String token){
 
-		String s = JwtUtil.parseToken(token);
-		String token1 = JwtUtil.createToken(s);
-		return token1;
+		System.out.println("正常业务");
+		return ResultWrapper.getSuccessBuilder().build();
 	}
 }
