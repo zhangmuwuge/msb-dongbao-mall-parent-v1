@@ -5,7 +5,6 @@ import com.msb.dongbao.ums.entity.UmsMember;
 import com.msb.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.msb.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.msb.dongbao.ums.service.UmsMemberService;
-import com.msb.msbdongbaocommonutil.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,8 +39,6 @@ public class UserMemberController {
 
 	@PostMapping("/login")
 	public ResultWrapper login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO){
-
-
 		return umsMemberService.login(umsMemberLoginParamDTO);
 	}
 
