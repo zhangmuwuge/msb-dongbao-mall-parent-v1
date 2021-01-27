@@ -46,6 +46,7 @@ public class UserMemberController {
 	@PostMapping("/edit")
 	@TokenCheck
 	public ResultWrapper edit(@RequestBody UmsMember umsMember){
+		System.out.println("edit");
 		return umsMemberService.edit(umsMember);
 	}
 
