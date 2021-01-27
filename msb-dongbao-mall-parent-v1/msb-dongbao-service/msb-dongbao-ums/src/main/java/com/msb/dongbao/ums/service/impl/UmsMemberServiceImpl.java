@@ -42,7 +42,6 @@ public class UmsMemberServiceImpl  implements UmsMemberService {
 		umsMember.setPassword(encode);
 
 		umsMemberMapper.insert(umsMember);
-
 		return ResultWrapper.getSuccessBuilder().build();
 	}
 
@@ -72,6 +71,7 @@ public class UmsMemberServiceImpl  implements UmsMemberService {
 
 	@Override
 	public ResultWrapper edit(UmsMember umsMember) {
+
 		umsMemberMapper.updateById(umsMember);
 		return ResultWrapper.getSuccessBuilder().data(umsMember).build();
 	}
