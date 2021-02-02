@@ -64,6 +64,7 @@ public class UmsMemberServiceImpl  implements UmsMemberService {
 
 		UserMemberLoginResponse userMemberLoginResponse = new UserMemberLoginResponse();
 		userMemberLoginResponse.setToken(token);
+
 		umsMember.setPassword("");
 		userMemberLoginResponse.setUmsMember(umsMember);
 		return ResultWrapper.getSuccessBuilder().data(userMemberLoginResponse).build();
