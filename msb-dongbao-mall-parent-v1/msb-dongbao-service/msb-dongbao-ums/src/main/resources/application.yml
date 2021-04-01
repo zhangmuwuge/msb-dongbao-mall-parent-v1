@@ -1,8 +1,8 @@
 spring:
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://localhost:3307/msb_dongbao_test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    password: 6154898
+    url: jdbc:mysql://localhost:3306/my_test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
   profiles:
     active: dev
@@ -14,4 +14,7 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
   mapper-locations:
-  - classpath*:/com/msb/msbdongbaoums/mapper/xml/*.xml
+    - classpath*:/com/msb/dongbao/ums/mapper/xml/*.xml
+  type-aliases-package: com.msb.dongbao.ums.entity
+server:
+  port: 8081

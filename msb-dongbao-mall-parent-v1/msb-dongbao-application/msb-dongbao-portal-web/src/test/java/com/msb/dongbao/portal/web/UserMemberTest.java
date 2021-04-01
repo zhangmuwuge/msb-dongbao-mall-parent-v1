@@ -1,6 +1,7 @@
-package com.msb.dongbao.ums.mapper;
+package com.msb.dongbao.portal.web;
 
 import com.msb.dongbao.ums.entity.UmsMember;
+import com.msb.dongbao.ums.mapper.UmsMemberMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,11 +10,11 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @author 马士兵教育:chaopengfei
  * @date 2020/12/23
  */
-@SpringBootTest
+@SpringBootTest()
 public class UserMemberTest {
 
 	@Autowired
-	UmsMemberMapper umsMemberMapper;
+    UmsMemberMapper umsMemberMapper;
 
 	@Test
 //	@Rollback
